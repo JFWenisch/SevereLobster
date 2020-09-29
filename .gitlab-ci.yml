@@ -64,10 +64,10 @@ deploy:
   environment:
     name: github-registry
   script:
-    - mvn $MAVEN_CLI_OPTS deploy
+    - mvn $MAVEN_CLI_OPTS deploy D-registry=https://maven.pkg.github.com/${gituser} -Dtoken=${gittoken}
   except:
     - tags
-    
+
 version_tag:
   stage: deploy
   image: registry.gitlab.com/juhani/go-semrel-gitlab:v0.21.1
