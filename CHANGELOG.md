@@ -2,6 +2,13 @@
 
 <!--- next entry here -->
 
+## 0.0.5
+2020-09-29
+
+### Fixes
+
+- env.properties (e988aaaf585b590c5ca18dacd8ebeea65ac308bb)
+
 ## 0.0.4
 2020-09-29
 
