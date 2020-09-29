@@ -2,6 +2,13 @@
 
 <!--- next entry here -->
 
+## 0.0.2
+2020-09-29
+
+### Fixes
+
+- deployment (a04cd388ec9a059014b7df7344bb74c833f7a4fb)
+
 ## 0.0.1
 2020-09-29
 
