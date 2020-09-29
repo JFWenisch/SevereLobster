@@ -99,11 +99,19 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com//JFWenisch/starryheavens-commons</url>
+	<repositories>
+                <repository>
+                  <id>github</id>
+                  <name>GitHub JFWenisch Apache Maven Packages</name>
+                  <url>https://maven.pkg.github.com/JFWenisch/starryheavens-commons</url>
 		</repository>
-	</distributionManagement>
+        </repositories>
+<distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>GitHub JFWenisch Apache Maven Packages</name>
+     <url>https://maven.pkg.github.com/JFWenisch/starryheavens-commons</url>
+   </repository>
+</distributionManagement>
+
 </project>
