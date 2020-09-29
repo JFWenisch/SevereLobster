@@ -2,6 +2,13 @@
 
 <!--- next entry here -->
 
+## 0.0.3
+2020-09-29
+
+### Fixes
+
+- Update .gitlab-ci.yml (cdb35ef5001cad206afd78edf9414ae8a4353b6a)
+
 ## 0.0.2
 2020-09-29
 
