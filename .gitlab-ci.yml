@@ -64,7 +64,7 @@ deploy:
   environment:
     name: github-registry
   script:
-    - mvn $MAVEN_CLI_OPTS deploy -Dregistry=https://maven.pkg.github.com/${gituser} -Dtoken=${gittoken}
+    - mvn deploy -B -s src/main/resources/env.properties
   except:
     - tags
 
