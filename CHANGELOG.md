@@ -2,6 +2,14 @@
 
 <!--- next entry here -->
 
+## 0.0.6
+2020-09-30
+
+### Fixes
+
+- folder hierarchy (b234102fe5acebcc513f1e80da89048fb151cffd)
+- docs folder (5460d2626137a87f8c68e196640e4a26d12d4776)
+
 ## 0.0.5
 2020-09-29
 
