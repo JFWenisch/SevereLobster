@@ -7,8 +7,8 @@
 
 	<groupId>com.jfwenisch</groupId>
 	<artifactId>starryheavens-commons</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
 	<name>starryheavens-commons</name>
 	<url>https://www.jfwenisch.com</url>
 
@@ -99,19 +99,13 @@
 			</plugin>
 		</plugins>
 	</reporting>
-	<repositories>
-                <repository>
-                  <id>github</id>
-                  <name>GitHub JFWenisch Apache Maven Packages</name>
-                  <url>https://maven.pkg.github.com/JFWenisch/starryheavens-commons</url>
-		</repository>
-        </repositories>
+
 <distributionManagement>
-   <repository>
-     <id>github</id>
-     <name>GitHub JFWenisch Apache Maven Packages</name>
-     <url>https://maven.pkg.github.com/JFWenisch/starryheavens-commons</url>
-   </repository>
-</distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub JFWenisch Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/JFWenisch/starryheavens-commons</url>
+		</repository>
+	</distributionManagement>
 
 </project>

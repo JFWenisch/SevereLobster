@@ -86,7 +86,7 @@ version_tag:
     - . release_info
     - echo -n "Updating version information v$RELEASE_VERSION ..."
     - release changelog
-    - release commit-and-tag CHANGELOG.md release_info
+    - release commit-and-tag pom.xml CHANGELOG.md release_info
     - release --ci-commit-tag v$RELEASE_VERSION add-download-link --name release --url $RELEASE_URL --description "$RELEASE_DESC"
   except:
     - tags
