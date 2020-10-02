@@ -30,7 +30,7 @@ import com.jfwenisch.starryheavens.commons.GraphicUtils;
  */
 public class ResourceManager {
 
-	private static final ResourceManager instance = new ResourceManager();
+	private static final ResourceManager instance = new ResourceManager("default");
 
 	private Properties propertyfile;
 	private Properties userpropertyFile;
