@@ -2,6 +2,13 @@
 
 <!--- next entry here -->
 
+## 0.0.12
+2020-10-02
+
+### Fixes
+
+- default userpropertyFile (e5293c501870f5f923755efae3135caafd879433)
+
 ## 0.0.11
 2020-10-02
 
