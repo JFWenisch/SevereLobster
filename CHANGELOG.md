@@ -2,6 +2,14 @@
 
 <!--- next entry here -->
 
+## 0.0.13
+2020-10-02
+
+### Fixes
+
+- deploymentvariables (9c3fe58472e74e11917433a657c6932dcc09bb71)
+-  (820a1421f79c7372bc4d44abdb1303d5e9577bc2)
+
 ## 0.0.12
 2020-10-02
 
