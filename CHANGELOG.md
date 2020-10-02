@@ -2,6 +2,13 @@
 
 <!--- next entry here -->
 
+## 0.0.10
+2020-10-02
+
+### Fixes
+
+- deployment after versioning in ci (c7daec5d2d5230ca6bd9282f98be3b1f8d16d70a)
+
 ## 0.0.9
 2020-10-02
 
