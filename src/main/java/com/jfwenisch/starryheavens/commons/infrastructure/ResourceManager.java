@@ -117,6 +117,29 @@ public class ResourceManager {
 		}
 		return iLevelHighscore;
 	}
+	   public void setScore(String strScore, String strPuzzle) {
+		     
+	    	String strProperty = userpropertyFile.getProperty(strPuzzle);
+	    	if(strProperty!=null)
+	    	{
+	    		if(Integer.valueOf(strScore)> Integer.valueOf(strProperty))
+	    		{
+	    			userpropertyFile.put(strPuzzle, strScore);
+	    			  saveUserProperties();
+	    			  System.out.println("Score "+strScore+ " fuer"+"StrPuzzle gespeichert[USER:"+strUser+"]");
+	    		}
+	    	}
+	    	else
+	    	{
+	    		userpropertyFile.put(strPuzzle, strScore);
+				  saveUserProperties();
+				  System.out.println("Score "+strScore+ " fuer"+"StrPuzzle gespeichert[USER:"+strUser+"]");
+	    	}
+	     
+	      
+
+	    }
+
 
 	/**
 	 * Aender die Spracheinstellung des ResourceManagers, sodass auf Properties
