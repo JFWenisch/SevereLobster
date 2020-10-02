@@ -7,7 +7,7 @@ stages:
   - deploy
 
 variables:
-  MAVEN_CLI_OPTS: "-DGITHUBUSERr=${GITHUBUSER} -GITHUBTOKEN=${GITHUBTOKEN} -s src/main/resources/env.properties --batch-mode"
+  MAVEN_CLI_OPTS: "-DGITHUBUSERR=${GITHUBUSER} -DGITHUBTOKEN=${GITHUBTOKEN} -s src/main/resources/env.properties --batch-mode"
   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
 
 .default_cache: &default_cache
