@@ -3,6 +3,7 @@ image: maven:3-jdk-8-slim
 stages:
   - build
   - package 
+  - versioning
   - deploy
 
 .default_cache: &default_cache
