@@ -2,6 +2,13 @@
 
 <!--- next entry here -->
 
+## 0.0.9
+2020-10-02
+
+### Fixes
+
+- order of gitlab (68e4b85a42b1a3c8cfbe2e3c752c769efce11f77)
+
 ## 0.0.8
 2020-10-02
 
