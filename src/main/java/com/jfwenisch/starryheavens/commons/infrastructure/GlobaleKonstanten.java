@@ -24,7 +24,7 @@ public abstract class GlobaleKonstanten {
     public static final Dimension MINIMUM_APP_SIZE = new Dimension(900, 800);
     public static final File DEFAULT_SPIEL_SAVE_DIR = getDefaultSpielSaveDir();
     public static final File DEFAULT_PUZZLE_SAVE_DIR = getDefaultPuzzleSaveDir();
-    public static final File USER_PROPERTIES = new File(DEFAULT_CONF_SAVE_DIR, "user.properties");
+    public static File USER_PROPERTIES = new File(DEFAULT_CONF_SAVE_DIR, "user.properties");
    public static final File DEFAULT_FREIGEGEBENE_PUZZLE_SAVE_DIR = getDefaultFreigegebenePuzzleSaveDir();
 
 

@@ -35,7 +35,7 @@ public class ResourceManager {
 	private Properties propertyfile;
 	private Properties userpropertyFile;
 	private Locale language;
-
+	 private String strUser;
 	private ResourceManager() {
 		propertyfile = new Properties();
 		try {
@@ -50,6 +50,24 @@ public class ResourceManager {
 			e.printStackTrace();
 		}
 	}
+	public ResourceManager(String strName) 
+    {
+    	GlobaleKonstanten.USER_PROPERTIES=new File(GlobaleKonstanten.DEFAULT_CONF_SAVE_DIR, strName+".properties");
+    	strUser=strName;
+    	propertyfile = new Properties();
+        try {
+            propertyfile.load(getProperties());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        userpropertyFile = new Properties();
+        try {
+            userpropertyFile.load(getUserProperties(strName));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 	/**
 	 * Gibt die Instanz des ResourceManager zurueck
@@ -281,6 +299,31 @@ public class ResourceManager {
 		return propertiesFile;
 	}
 
+    /**
+     * Gibt die Userspezifischen Properties zurueck
+     *
+     * @return Userspezifische Properties
+     */
+    private InputStream getUserProperties(String strName) {
+        InputStream propertiesFile = null;
+        try {
+            propertiesFile = new FileInputStream
+                    (new File(GlobaleKonstanten.DEFAULT_CONF_SAVE_DIR, strName+".properties"));
+        } catch (FileNotFoundException e) {
+         System.out.println("Neuer USER: "+strName);
+            saveUserProperties();
+            try {
+				propertiesFile = new FileInputStream
+				        (new File(GlobaleKonstanten.DEFAULT_CONF_SAVE_DIR, strName+".properties"));
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+     
+        }
+        return propertiesFile;
+    }
+
 	/**
 	 * Gibt die URL einer Grafik im Package
 	 * src/main/resources/infrastructure/graphics zurueck
@@ -462,6 +505,79 @@ public class ResourceManager {
 	}
 	public URL getAnimation(String graphicName) {
 		return this.getClass().getResource("animation/" + graphicName);
+	}
+
+	public static ResourceManager get(String strUser) {
+		// TODO Auto-generated method stub
+		return new ResourceManager(strUser);
+	}
+
+	public void addStars(int countSterne) 
+	{
+		addCountToProperty("stars",countSterne);
+     
+		
+	}
+	public void addKills(int countKills) 
+	{
+		addCountToProperty("kills",countKills);
+     
+		
+	}
+	
+	private void addCountToProperty(String strProperty,int iCount)
+	{
+		String strMyProperty = userpropertyFile.getProperty(strProperty);
+		if(strMyProperty!=null)
+    	{
+    		int iNewCount=iCount+ Integer.valueOf(strMyProperty);
+    		{
+    			userpropertyFile.put(strProperty, String.valueOf(iNewCount));
+    			  saveUserProperties();
+    			  System.out.println(strProperty+" "+strMyProperty + " | "+strProperty+" new"+ iNewCount+" gespeichert[USER:"+strUser+"]");
+    		}
+    	}
+    	else
+    	{
+    		userpropertyFile.put(strProperty, String.valueOf(iCount));
+			  saveUserProperties();
+			  System.out.println("No "+strProperty+" !"+" Got new "+iCount+ " fuer"+" saved[USER:"+strUser+"]");
+    	}
+	}
+	public String getKills()
+	{
+		if(userpropertyFile.getProperty("kills")==null)
+			addKills(0);
+		return userpropertyFile.getProperty("kills");
+	}
+	public String getRanking()
+	{
+		 if(userpropertyFile.getProperty("rank")!=null)
+			return userpropertyFile.getProperty("rank");
+		 return "NOT RANKED";
+	}
+	public String getStars()
+	{
+		if(userpropertyFile.getProperty("stars")==null)
+			addStars(0);
+			
+		return userpropertyFile.getProperty("stars");
+	}
+	public void setRanking(int iOutputCounter) {
+		userpropertyFile.put("rank", String.valueOf(iOutputCounter));
+		  saveUserProperties();
+	
+		
+	}
+	public String getPassword() {
+		String strText =userpropertyFile.getProperty("PASSWORD");
+		if(strText.equals("")| strText==null)
+			strText="REGISTER";
+		return strText;
+	}
+	public void setPassword(String text) {
+		userpropertyFile.put("PASSWORD", text);
+		saveUserProperties();
 	}
 
 }
