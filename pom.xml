@@ -7,7 +7,7 @@
 
 	<groupId>com.jfwenisch</groupId>
 	<artifactId>starryheavens-commons</artifactId>
-	<version>0.0.7</version>
+	<version>0.0.8</version>
 	<packaging>jar</packaging>
 	<name>starryheavens-commons</name>
 	<url>https://www.jfwenisch.com</url>

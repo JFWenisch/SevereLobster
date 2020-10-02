@@ -2,6 +2,13 @@
 
 <!--- next entry here -->
 
+## 0.0.8
+2020-10-02
+
+### Fixes
+
+- server related methods (aa08841442ff543080fe644bdef2ce6cd0f5f77e)
+
 ## 0.0.7
 2020-09-30
 
