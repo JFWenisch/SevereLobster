@@ -57,20 +57,8 @@ package:
   except:
     - tags
 
-deploy:
-  stage: deploy
-  cache:
-    << : *default_cache
-    policy: pull
-  environment:
-    name: github-registry
-  script:
-    - mvn deploy -B -s src/main/resources/env.properties
-  except:
-    - tags
-
 version_tag:
-  stage: deploy
+  stage: versioning
   image: registry.gitlab.com/juhani/go-semrel-gitlab:v0.21.1
   before_script:
   - apt update
@@ -89,6 +77,18 @@ version_tag:
     - release changelog
     - release commit-and-tag pom.xml CHANGELOG.md release_info
     - release --ci-commit-tag v$RELEASE_VERSION add-download-link --name release --url $RELEASE_URL --description "$RELEASE_DESC"
+  except:
+    - tags
+
+deploy:
+  stage: deploy
+  cache:
+    << : *default_cache
+    policy: pull
+  environment:
+    name: github-registry
+  script:
+    - mvn deploy -B -s src/main/resources/env.properties
   except:
     - tags
  
