@@ -6,6 +6,10 @@ stages:
   - versioning
   - deploy
 
+variables:
+  MAVEN_CLI_OPTS: "-DGITHUBUSERr=${GITHUBUSER} -GITHUBTOKEN=${GITHUBTOKEN} -s src/main/resources/env.properties --batch-mode"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
 .default_cache: &default_cache
   key: ${CI_COMMIT_REF_SLUG}
   paths:
@@ -88,7 +92,7 @@ deploy:
   environment:
     name: github-registry
   script:
-    - mvn deploy -B -s src/main/resources/env.properties
+     - mvn $MAVEN_CLI_OPTS deploy
   except:
     - tags
  
